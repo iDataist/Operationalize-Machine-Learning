@@ -1,0 +1,69 @@
+2021-05-12 10:40:27.236 - INFO - 68311 - azureml.train.automl._local_managed_utils.is_docker_installed:354 - Docker is installed with Docker version 20.10.6, build 370c289
+.
+2021-05-12 10:40:27.239 - INFO - 68311 - azureml.train.automl.automlconfig._start_execution:217 - Submitting remote.
+2021-05-12 10:48:35.823 - INFO - 68311 - azureml.automl.core.dataset_utilities._save_datasets_to_json:131 - JSON serialization of input of type <class 'NoneType'> is un-supported.
+2021-05-12 10:48:35.832 - INFO - 68311 - azureml.train.automl._experiment_drivers.driver_utilities.validate_input:124 - Start data validation.
+2021-05-12 10:48:36.218 - INFO - 68311 - azureml.train.automl._experiment_drivers.driver_utilities.validate_input:137 - Validation service found the data has no errors.
+2021-05-12 13:44:06.882 - CRITICAL - 68311 - azureml.train.automl.run.log_traceback:227 - Type: Unclassified
+Class: ServiceException
+Message: ServiceException:
+	Code: 400
+	Message: (UserError) Error when parsing request; unable to deserialize request body
+	Details:
+
+	Headers: {
+	    "Date": "Wed, 12 May 2021 18:44:06 GMT",
+	    "Content-Type": "application/json; charset=utf-8",
+	    "Content-Length": "587",
+	    "Connection": "keep-alive",
+	    "Request-Context": "appId=cid-v1:2d2e8e63-272e-4b3c-8598-4ee570a0e70d",
+	    "x-ms-response-type": "error",
+	    "Strict-Transport-Security": "max-age=15724800; includeSubDomains; preload",
+	    "X-Content-Type-Options": "nosniff",
+	    "x-request-time": "0.041"
+	}
+	InnerException: {
+    "additional_properties": {},
+    "error": {
+        "additional_properties": {
+            "debugInfo": null
+        },
+        "code": "UserError",
+        "severity": null,
+        "message": "Error when parsing request; unable to deserialize request body",
+        "message_format": null,
+        "message_parameters": null,
+        "reference_code": null,
+        "details_uri": null,
+        "target": null,
+        "details": [],
+        "inner_error": null
+    },
+    "correlation": {
+        "operation": "44a6ae7fc16f8e4eb5b297cbcdafcf64",
+        "request": "53de0e6fec804345"
+    },
+    "environment": "westus2",
+    "location": "westus2",
+    "time": {},
+    "component_name": "run-history"
+}
+Traceback:
+  File "run.py", line 118, in __init__
+    **kwargs)
+  File "run.py", line 173, in __init__
+    super(Run, self).__init__(experiment, run_id, outputs=outputs, **kwargs)
+  File "run_base.py", line 89, in __init__
+    _batch_upload_metrics=_batch_upload_metrics, flush_eager=flush_eager)
+  File "run_history_facade.py", line 96, in __init__
+    self.run_dto = run_dto if run_dto is not None else self.run.get_run()
+  File "run_client.py", line 78, in get_run
+    return super(RunClient, self).get_run(self._run_id, **kwargs)
+  File "experiment_client.py", line 126, in get_run
+    **kwargs)
+  File "experiment_client.py", line 266, in _execute_with_experimentid_arguments
+    *args, **kwargs)
+  File "clientbase.py", line 591, in _execute_with_arguments
+    raise ServiceException(e)
+
+ExceptionTarget: Unspecified
