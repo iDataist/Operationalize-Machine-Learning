@@ -1,5 +1,5 @@
 # Operationalizing Machine Learning
-Shipping models into production in a reliable, reproducible, and automated way with a constant feedback loop is crucial. This is where all the DevOps and MLOPs principles come into play. In this project, I built a classifier to predict if the client will subscribe to a term deposit with the bank, and deployed it to an Azure Container Instance (ACI). I applied key concepts of operationalizing Machine Learning, from enabling Application Insights and identifying problems in logs, to harnessing the power of Azure Pipelines.  
+Shipping models into production in a reliable, reproducible, and automated way with a constant feedback loop is crucial. This is where all the DevOps and MLOPs principles come into play. In this project, I leveraged Azure AutoML to build classifiers that predict whether the client will subscribe to a term deposit with the bank, and deployed the best model to an Azure Container Instance (ACI). I applied key concepts of operationalizing Machine Learning, from enabling Application Insights and identifying problems in logs, to harnessing the power of Azure Pipelines and automating the process.  
 
 ## Architectural Diagram
 ![](screenshots/architecture.png)
@@ -53,6 +53,7 @@ Shipping models into production in a reliable, reproducible, and automated way w
     ![](screenshots/scheduled_run.png)
     ![](screenshots/pipeline_graph.png)
     ![](screenshots/pipeline_endpoints.png)
+    ![](screenshots/pipeline_endpoints_2.png)
     ![](screenshots/rundetails_1.png)
     ![](screenshots/rundetails_2.png)
 ## Screen Recording
