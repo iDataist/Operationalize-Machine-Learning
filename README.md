@@ -12,13 +12,13 @@ Shipping models into production in a reliable, reproducible, and automated way w
     ![](screenshots/az_ml_workspace_share.png)
 2. **Automated ML Experiment**
 
-    Execute the `Setup`, `Data` and `Train` steps in `subscription_classifier.ipynb`. Go to AzureMl portal to see the graphical representations. 
+    Execute the `Setup`, `Data` and `Train` steps in `subscription_classifier.ipynb`. Go to Azure portal to see the graphical representations. 
     ![](screenshots/registered_datasets.png)
     ![](screenshots/experiment.png)
-    After the experiment run completes, a summary of all the models and their metrics are shown, including explanations. The Best Model will be shown in the Details tab. In the Models tab, it will come up first (at the top). Make sure you select the best model for deployment. 
-    ![](screenshots/best_model.png)
 3. **Deploy the Best Model**
     Execute the `Deploy`, and `Test` steps in `subscription_classifier.ipynb`.
+    After the experiment run completes, a summary of all the models and their metrics are shown, including explanations. The Best Model will be shown in the Details tab. In the Models tab, it will come up first (at the top). Make sure you select the best model for deployment. 
+    ![](screenshots/best_model.png)
 4. **Enable Application Insights**
 
     Run `python logs.py`.

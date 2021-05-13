@@ -70,4 +70,4 @@
 # Total:        114  160  28.0    172     199#
 
 
- ab -n 10 -v 4 -p data.json -T 'application/json' -H 'Authorization: Bearer KEY' URI
+ ab -n 10 -v 4 -p data.json -T 'application/json' -H 'Authorization: Bearer uSeRRSajKrRe0RbRIV6tImgRAqHUQi8H' http://fb8acf52-8338-43b1-a090-80f66cc3ea3a.westus2.azurecontainer.io/score
