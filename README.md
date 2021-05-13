@@ -61,4 +61,4 @@ Here is the [link](https://youtu.be/NMyYJ88iy-Y) to the recording.
 ## Future Improvements
 - Implement data lineage tracking
 - Implement a CI/CD pipeline that automatically updates the deployed model with updated data
-- Implement a testing suit
+- Implement a testing suite
