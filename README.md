@@ -56,10 +56,3 @@ Shipping models into production in a reliable, reproducible, and automated way w
     ![](screenshots/pipeline_endpoints_2.png)
     ![](screenshots/rundetails_1.png)
     ![](screenshots/rundetails_2.png)
-## Screen Recording
-Here is the [link](https://youtu.be/NMyYJ88iy-Y) to the recording.
-
-## Future Improvements
-- Implement data lineage tracking
-- Implement a CI/CD pipeline that automatically updates the deployed model with updated data
-- Implement a testing suite
