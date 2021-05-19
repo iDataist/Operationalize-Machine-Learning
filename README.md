@@ -10,21 +10,37 @@ Shipping models into production in a reliable, reproducible, and automated way w
     Modify `authentication.sh` to update the values of a few variables, including the resource group name and the workspace name. Create a Service Principal account and associate it with the workspace by running `bash authentication.sh`.
     ![](screenshots/service_principal.png)
     ![](screenshots/az_ml_workspace_share.png)
-2. **Automated ML Experiment**
+2. **Automated ML Model**
 
-    Execute the `Setup`, `Data` and `Train` steps in `subscription_classifier.ipynb`. Go to Azure portal to see the graphical representations. 
+    Execute the `Setup`, `Data` and `Train` steps in `subscription_classifier.ipynb`. Check the Datasets and Experiments tabs in Azure Portal.
     ![](screenshots/registered_datasets.png)
     ![](screenshots/experiment.png)
 3. **Deploy the Best Model**
-    Execute the `Deploy`, and `Test` steps in `subscription_classifier.ipynb`.
-    After the experiment run completes, a summary of all the models and their metrics are shown, including explanations. The Best Model will be shown in the Details tab. In the Models tab, it will come up first (at the top). Make sure you select the best model for deployment. 
-    ![](screenshots/best_model.png)
-4. **Enable Application Insights**
 
-    Run `python logs.py`.
+    Execute the `Register the best model` and `Deploy the model to ACI` sections of the `Deploy` step in `subscription_classifier.ipynb`.
+    After the experiment run completes, check the best model in Azure Portal. 
+    ![](screenshots/best_model.png)
+4. **Enable Logging**
+
+    Turn on Application Insights by running `python logs.py`.
     ![](screenshots/log.png)
     ![](screenshots/application_insights.png)
-5. **Swagger Documentation**
+
+5. **Consume Model Endpoints**
+
+    Modify `uri` and `key` values in the `endpoint.py` file, the values can be found in the AzureML Endpoints Section. Run `python endpoint.py` to generate predictions using the deployed model.
+    ![](screenshots/endpoint.png)
+    Modify `URI` and `KEY` in the `benchmark.sh` and run `bash benchmark.sh` to call apache benchmark.
+    ![](screenshots/benchmark_1.png)
+    ![](screenshots/benchmark_2.png)
+
+6. **Create and Publish a Pipeline**
+    
+    Execute the `Publish and run from REST endpoint` section of the `Deploy` step in `subscription_classifier.ipynb`.
+    ![](screenshots/pipeline_endpoints_2.png)
+    ![](screenshots/rundetails_2.png)
+
+7. **Documentation**
 
     Download `swagger.json` from Azure `Endpoints` section and put it in the `swagger` folder. Run `bash swagger.sh` and `python serve.py`. 
     
@@ -40,19 +56,3 @@ Shipping models into production in a reliable, reproducible, and automated way w
     ![](screenshots/swagger3.png)
     Look around at the different HTTP requests that are supported for your model, including the example.
     ![](screenshots/swagger4.png)
-6. **Consume Model Endpoints**
-
-    Modify `uri` and `key` values in the `endpoint.py` file, the values can be found in the AzureML Endpoints Section. Run `python endpoint.py` to generate predictions using the deployed model.
-    ![](screenshots/endpoint.png)
-    Modify `URI` and `KEY` in the `benchmark.sh` and run `bash benchmark.sh` to call apache benchmark.
-    ![](screenshots/benchmark_1.png)
-    ![](screenshots/benchmark_2.png)
-
-7. **Create, Publish and Consume a Pipeline**
-    ![](screenshots/pipeline.png)
-    ![](screenshots/scheduled_run.png)
-    ![](screenshots/pipeline_graph.png)
-    ![](screenshots/pipeline_endpoints.png)
-    ![](screenshots/pipeline_endpoints_2.png)
-    ![](screenshots/rundetails_1.png)
-    ![](screenshots/rundetails_2.png)
